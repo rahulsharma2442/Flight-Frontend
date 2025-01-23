@@ -1,11 +1,12 @@
 import { LoginPage } from "./pages/LoginPage";
-import { Provider } from "react-redux";
-import { store } from './redux/store'
+import { UserProfile } from "./pages/UserProfile";
+import './App.css';
 function App() {
   return (
-    <Provider store={store}>
-    <LoginPage/>
-    </Provider>
+    <div className="app">
+    {/* <LoginPage/> */}
+    <UserProfile/>
+    </div>
   );
 }
 
