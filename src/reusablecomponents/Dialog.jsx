@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -10,22 +11,22 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useState } from "react";
-import validator from 'validator'
+
 export const DialogDemo = ({ isOpen, setIsOpen }) => {
   const [email,setEmail] = useState("");
   const [password,setPassword] = useState("");
-  const saveValues=(event,valueType)=>{
+  const handleChange=(event,valueType)=>{
     let value = event.target.value;
-    if(!value){
-      return "Error";
-    }
+    console.log(value);
+    console.log('going');
     if(valueType=="password"){
-      if(validator.isStrongPassword(value))
+
+     
       setPassword(value)
     }
     else{
-      if(validator.isEmail(value))
-      setEmail(email);
+      console.log('inside email');
+      setEmail(value);
     }
 
   }
@@ -45,6 +46,7 @@ export const DialogDemo = ({ isOpen, setIsOpen }) => {
             <Input
               id="email"
               value={email}
+              onChange ={(event)=> handleChange(event,"email")}
               className=" w-[6.5rem] h-[1.7rem] text-sm md:w-[11rem] xl:w-[13rem] xl:h-7 px-2 2xl:w-[18rem] 2xl:h-[1.8rem]"
             />
           </div>
@@ -54,7 +56,7 @@ export const DialogDemo = ({ isOpen, setIsOpen }) => {
             <Input
               id="password"
               value={password}
-              onChange = {event=>saveValues(event)}
+              onChange ={(event)=> handleChange(event,"password")}
               type="password"
               className="  w-[6.5rem] h-[1.7rem] text-sm md:w-[11rem] xl:w-[13rem] xl:h-7 px-2 2xl:w-[18rem] 2xl:h-[1.8rem]"
             />
