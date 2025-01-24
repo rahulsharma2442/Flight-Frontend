@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import './page.css';
 import { Button } from '../components/ui/button';
 import { DialogDemo } from '../reusablecomponents/Dialog';
