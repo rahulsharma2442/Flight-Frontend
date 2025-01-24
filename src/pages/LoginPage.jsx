@@ -5,6 +5,7 @@ import { DialogDemo } from '../reusablecomponents/Dialog';
 import { useState } from 'react';
 import { useGetAlbumDetailsQuery } from '../srv/loginpageapislice';
 import { useGetUserDetailsQuery } from '../srv/loginpageapislice';
+import { DialogSignUp } from '../reusablecomponents/SignUpDialog';
 
 export const LoginPage = () => {
   const [isLoginOpen,setIsLoginOpen] =useState(false);
@@ -18,7 +19,7 @@ export const LoginPage = () => {
           <Button className='login' variant='primary' onClick={()=>{setIsLoginOpen(prev=>!prev)}}>Login</Button>
           <Button className='signup' variant='primary' onClick={() => {setIsSignUpOpen(prev => !prev)}}>Signup</Button>
           <DialogDemo isOpen={isLoginOpen} setIsOpen={setIsLoginOpen}></DialogDemo>
-          <DialogDemo isOpen={isSignUpOpen} setIsOpen={setIsSignUpOpen}></DialogDemo>
+          <DialogSignUp isOpen={isSignUpOpen} setIsOpen={setIsSignUpOpen}></DialogSignUp>
         </div>
       </div>
     </div>
