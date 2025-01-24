@@ -18,7 +18,7 @@ export const LoginPage = () => {
           <Button className='login' variant='primary' onClick={()=>{setIsLoginOpen(prev=>!prev)}}>Login</Button>
           <Button className='signup' variant='primary' onClick={() => {setIsSignUpOpen(prev => !prev)}}>Signup</Button>
           <DialogDemo isOpen={isLoginOpen} setIsOpen={setIsLoginOpen}></DialogDemo>
-          <DialogSignUp isOpen={isSignUpOpen} setIsOpen={setIsSignUpOpen}></DialogSignUp>
+          <DialogSignUp isOpen={isSignUpOpen} setIsOpen={setIsSignUpOpen} setIsLoginOpen={setIsLoginOpen}></DialogSignUp>
         </div>
       </div>
     </div>
