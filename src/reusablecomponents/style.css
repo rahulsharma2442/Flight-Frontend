@@ -1,0 +1,43 @@
+ .origin .react-datepicker-wrapper .react-datepicker__input-container input {
+    width: 75px;
+    font-size: 0.8rem;
+    
+    
+  }
+  .origin .react-datepicker-wrapper .react-datepicker__input-container {
+    width: 78px;
+   
+  }
+  .origin .react-datepicker-wrapper{
+    width: 78px;
+    
+  }
+  .origin .react-datepicker-popper{
+    margin-left: 80px;
+  }
+  .origin .react-datepicker-popper[data-placement^=bottom] .react-datepicker__triangle {
+    
+    visibility: hidden;
+  }
+
+  .destination .react-datepicker-wrapper .react-datepicker__input-container input {
+    width: 75px;
+    font-size: 0.8rem;
+    
+  }
+  .destination .react-datepicker-wrapper .react-datepicker__input-container {
+    width: 78px;
+   
+  }
+  .destination .react-datepicker-wrapper{
+    width: 78px;
+    
+  }
+  .destination .react-datepicker-popper[data-placement^=bottom] .react-datepicker__triangle {
+    left:40px;
+    visibility: hidden;
+    
+  }
+  .destination .react-datepicker-popper{
+    margin-left: -80px;
+  }
