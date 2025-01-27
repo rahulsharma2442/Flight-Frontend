@@ -7,11 +7,12 @@ import { DatePickerComp } from "../reusablecomponents/DatePickern";
 // icons imports.....
 import { Calendar } from "lucide-react";
 import { ArrowRightLeft } from "lucide-react";
+
 export const SearchPage = () => {
   const [origin, setOrigin] = useState({ code: "DEL", name: "New Delhi" });
   const [destination, setDestination] = useState({ code: "BLR", name: "Bengaluru" });
   const [tripType, setTripType] = useState("oneWay");
-  const tripTypeCss = "text-blue-700 font-medium  rounded-xl";
+  const tripTypeCss = "text-indigo-700 font-bold rounded-xl ";
   const [selectedDate, setSelectedDate] = useState(null);
 
   const swapFunction = () => {
@@ -21,52 +22,59 @@ export const SearchPage = () => {
   };
 
   return (
-    <div className="h-[100vh] w-full border-[1px] flex flex-col items-center">
-      <div className="flex flex-row justify-center items-center w-full">Hello Krishna</div>
-      <div className="bg-white border-[1px] border-black w-full h-full rounded-xl flex flex-col">
-        <div className="flex flex-row justify-around items-center h-12 w-full">
-          <div className="flex flex-row bg-[rgb(235,235,235)] w-[70%] rounded-2xl h-[70%] justify-evenly">
-            <div onClick={() => setTripType("oneWay")} className={`flex flex-row justify-center items-center text-[0.9rem] ${tripType === "oneWay" ? tripTypeCss : ""}`}>
+    <div className="h-screen w-full flex flex-col items-center bg-gradient-to-b from-blue-100 via-purple-100 to-pink-100 ">
+      <div className="text-2xl font-bold text-gray-700 mt-8">Travel Planner</div>
+      <div className="bg-white shadow-lg w-full max-w-6xl h-auto rounded-2xl mt-8 flex flex-col">
+        <div className="flex flex-row justify-around items-center h-16 w-full bg-gradient-to-r from-indigo-300 via-purple-300 to-pink-300 rounded-t-xl">
+          <div className="flex flex-row bg-gray-100 w-[70%] rounded-2xl h-[70%] justify-evenly">
+            <div
+              onClick={() => setTripType("oneWay")}
+              className={`flex flex-row justify-center items-center text-sm ${tripType === "oneWay" ? tripTypeCss : "text-gray-600"}`}
+            >
               One Way
             </div>
-            <div onClick={() => setTripType("roundTrip")} className={`flex flex-row justify-center items-center text-[0.9rem] ${tripType === "roundTrip" ? tripTypeCss : ""}`}>
+            <div
+              onClick={() => setTripType("roundTrip")}
+              className={`flex flex-row justify-center items-center text-sm ${tripType === "roundTrip" ? tripTypeCss : "text-gray-600"}`}
+            >
               Round Trip
             </div>
           </div>
         </div>
-        <div className="border-[1px] border-y-[rgb(0,0,0,0.4)] flex flex-row justify-between items-center h-[20%] px-2">
+        <div className="border-b border-gray-300 flex flex-row justify-between items-center h-[20%] px-4 py-6">
           <div className="flex flex-col justify-center items-center">
-            <div className="font-bold text-[0.9rem]">{origin.code}</div>
-            <div className="text-[0.7rem]">{origin.name}</div>
+            <div className="font-bold text-xl text-indigo-700">{origin.code}</div>
+            <div className="text-sm text-gray-600">{origin.name}</div>
           </div>
-          
-            <ArrowRightLeft onClick={swapFunction} className="h-3 " />
-          
+
+          <ArrowRightLeft
+            onClick={swapFunction}
+            className="h-6 text-indigo-600 cursor-pointer hover:text-purple-500 transition-colors"
+          />
+
           <div className="flex flex-col justify-center items-center">
-            <div className="font-bold text-[0.9rem]">{destination.code}</div>
-            <div className="text-[0.7rem]">{destination.name}</div>
+            <div className="font-bold text-xl text-indigo-700">{destination.code}</div>
+            <div className="text-sm text-gray-600">{destination.name}</div>
           </div>
         </div>
-        <div className="border-[1px] border-b-[rgb(0,0,0,0.4)] flex flex-row justify-between items-center h-[20%] px-2">
-          <div className="flex flex-col justify-center items-center">
-            <div className="flex flex-row justify-center items-center">
-              <Calendar size={14} color="black" />
+        <div className="border-b border-gray-300 flex flex-row justify-between items-center h-[20%] px-4 py-6">
+          <div className="flex flex-col justify-center items-center space-y-2">
+            <div className="flex flex-row justify-center items-center space-x-2">
+              <Calendar size={18} color="indigo" />
               <DatePickerComp customClass={"origin"} />
             </div>
           </div>
 
-          <div className="flex flex-col justify-center items-center">
-            {tripType == "roundTrip" && (
-              <div className="flex flex-row justify-center items-center">
-                <Calendar size={14} color="black" />
+          {tripType === "roundTrip" && (
+            <div className="flex flex-col justify-center items-center space-y-2">
+              <div className="flex flex-row justify-center items-center space-x-2">
+                <Calendar size={18} color="indigo" />
                 <DatePickerComp customClass={"destination"} />
               </div>
-            )}
-          </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
   );
 };
-// 92 115 231
-//

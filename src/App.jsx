@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { LoginPage } from "./pages/LoginPage";
 import { UserProfile } from "./pages/UserProfile";
 import { SearchPage } from "./pages/searchPage";
